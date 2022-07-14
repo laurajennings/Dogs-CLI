@@ -1,19 +1,21 @@
 class Dog():
-    large = [] 
-    small = []
 
-    def __init__(self, name, size):
+    def __init__(self, name, owner, breed, size, age, gender, feed_meds, grooming, belongings, friendly):
         self.name = name
+        self.owner = owner
+        self.breed = breed
         self.size = size
+        self.age = age
+        self.gender = gender
+        self.feed_meds = feed_meds
+        self.grooming = grooming
+        self.belongings = belongings
+        self.friendly = friendly
 
-    def is_large(self):
-        if self.size == "large":
-            return True
-        
 
     #What happens when you pass object to print?
     def __str__(self):
-        return f"{self.name}, {self.size} dog"
+        return f"\n{self.name}: \nBelongs to {self.owner}, is a {self.size}, {self.breed} {self.gender}, {self.age} years old. Special food or medication: {self.feed_meds}, Requires grooming: {self.grooming}, Belongings: {self.belongings}, Friendly: {self.friendly}"
 
     #What happens when you use ==?
     def __eq__(self, other):
