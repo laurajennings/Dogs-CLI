@@ -18,27 +18,20 @@ def add_dog(dog):
     with c.connection:
         c.execute("INSERT INTO dogs VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         c.execute("INSERT INTO belongings VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
+        c.execute("INSERT INTO feed_meds VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         if dog.size == "Large":
             c.execute("INSERT INTO large VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         if dog.size == "Small":
             c.execute("INSERT INTO small VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         if dog.grooming == "Yes":
             c.execute("INSERT INTO groom VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
+        def feed_meds():
+            if not dog.feed_meds == "None":
+                c.execute("INSERT INTO feed_meds VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
+
 
     c.connection.close()
-    
 
-# def add_large(dog):
-#     c = cursor()
-#     with c.connection:
-#         c.execute("INSERT INTO large VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
-#     c.connection.close()
-
-# def add_small(dog):
-#     c = cursor()
-#     with c.connection:
-#         c.execute("INSERT INTO small VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
-#     c.connection.close()
     
 def get_dogs():
     c = cursor()
@@ -88,6 +81,15 @@ def delete_dog(name):
         c.execute('DELETE FROM belongings WHERE name=?', (name,))
     c.connection.close()
 
+def feed_meds():
+    c = cursor()
+    with c.connection:
+        c.execute('SELECT name, feed_meds FROM feed_meds')
+        dog = c.fetchall() 
+        print("Special food or medication:")
+        print(dog)
+    c.connection.close()
+
 def out_groom():
     c = cursor()
     with c.connection:
@@ -105,9 +107,3 @@ def out_belongings():
         print("Belongings:")
         print(dog)
     c.connection.close()
-
-# def get_dogs():
-#     c = cursor()
-#     with c.connection:
-#         c.execute('SELECT * FROM dogs')
-#     return c.fetchall()

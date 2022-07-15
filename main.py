@@ -5,13 +5,6 @@ from dog import Dog
 import dogsSDK
 
 
-#dog1 = Dog("Hades", "large")
-#print(dogsSDK.add_dog(dog1))
-#print(dogsSDK.get_dogs())
-#print(dogsSDK.get_info("Hades"))
-
-
-
 def main_menu():
     options = ["Add Dog", "Delete Dog", "Get Info", "Incoming", "Feeding/Meds", "Outgoing", "Quit"]
     main_menu = TerminalMenu(options)
@@ -41,11 +34,6 @@ def main_menu():
             dog = Dog(name, owner, breed, size, age, gender, feed_meds, grooming, belongings, friendly)
             dogsSDK.add_dog(dog)
 
-            # if size == "Large":
-            #     dogsSDK.add_large(dog)
-            # else:
-            #     dogsSDK.add_small(dog)
-
         if(optionsChoice == "Delete Dog"):
             name = input("Name: ")
             dogsSDK.delete_dog(name)
@@ -61,13 +49,13 @@ def main_menu():
                 print(dogsSDK.get_small_dogs())
             if(optionsChoice == "Search Name"):
                 name = input("Name: ")
-                print(dogsSDK.get_info())
+                print(dogsSDK.get_info(name))
 
         if(optionsChoice == "Incoming"):
             pass
 
         if(optionsChoice == "Feeding/Meds"):
-            print("feed")
+            print(dogsSDK.feed_meds())
 
         if(optionsChoice == "Outgoing"):
             print(dogsSDK.out_groom())

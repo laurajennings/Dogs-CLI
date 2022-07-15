@@ -96,3 +96,10 @@ def add_dog():
 
 def get_info():
     c.exucute('SELECT * FROM books')
+
+
+    # def __eq__(self, other):
+    #     if(self.name == other.name and self.size == other.size):
+    #         return True
+    
+    # __hash__ = None
