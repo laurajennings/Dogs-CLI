@@ -12,11 +12,9 @@ class Dog():
         self.belongings = belongings
         self.friendly = friendly
 
-    
     def __str__(self):
         return f"\n{self.name}: \nBelongs to {self.owner}, is a {self.size}, {self.breed} {self.gender}, {self.age} years old. Special food or medication: {self.feed_meds}, Requires grooming: {self.grooming}, Belongings: {self.belongings}, Friendly: {self.friendly}"
-
-
+        
     def __repr__(self): 
         return self.__str__()
 
