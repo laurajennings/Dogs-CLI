@@ -2,7 +2,7 @@
 import os
 from simple_term_menu import TerminalMenu
 from dog import Dog
-import dogsSDK
+import dogs_sql
 
 
 
@@ -37,31 +37,31 @@ def menu():
             friendly = input("Are they friendly?: ")
             dog = Dog(name, owner, breed, size, age, gender,
                     feed_meds, grooming, belongings, friendly)
-            dogsSDK.add_dog(dog)
+            dogs_sql.add_dog(dog)
 
         if options_choice == "Delete Dog":
             name = input("Name: ")
-            dogsSDK.delete_dog(name)
+            dogs_sql.delete_dog(name)
 
         if options_choice == "Get Info":
             options_list = info_menu.show()
             options_choice = info_options[options_list]
             if options_choice == "All":
-                print(dogsSDK.get_dogs())
+                print(dogs_sql.get_dogs())
             if options_choice == "Large":
-                print(dogsSDK.get_large_dogs())
+                print(dogs_sql.get_large_dogs())
             if options_choice == "Small":
-                print(dogsSDK.get_small_dogs())
+                print(dogs_sql.get_small_dogs())
             if options_choice == "Search Name":
                 name = input("Name: ")
-                print(dogsSDK.get_info(name))
+                print(dogs_sql.get_info(name))
 
         if options_choice == "Feeding/Meds":
-            print(dogsSDK.feed_meds())
+            print(dogs_sql.feed_meds())
 
         if options_choice == "Grooming/Belongings":
-            print(dogsSDK.out_groom())
-            print(dogsSDK.out_belongings())
+            print(dogs_sql.out_groom())
+            print(dogs_sql.out_belongings())
 
         else:
             print(options_choice)

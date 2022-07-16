@@ -1,6 +1,9 @@
+'''Classes.'''
 class Dog():
+    '''Dog class.'''
 
-    def __init__(self, name, owner, breed, size, age, gender, feed_meds, grooming, belongings, friendly):
+    def __init__(self, name, owner, breed, size, age, gender,
+                feed_meds, grooming, belongings, friendly):
         self.name = name
         self.owner = owner
         self.breed = breed
@@ -13,8 +16,10 @@ class Dog():
         self.friendly = friendly
 
     def __str__(self):
-        return f"\n{self.name}: \nBelongs to {self.owner}, is a {self.size}, {self.breed} {self.gender}, {self.age} years old. Special food or medication: {self.feed_meds}, Requires grooming: {self.grooming}, Belongings: {self.belongings}, Friendly: {self.friendly}"
+        return f"""\n{self.name}: \nBelongs to {self.owner}, is a {self.size},
+                {self.breed} {self.gender}, {self.age} years old. Special food
+                or medication: {self.feed_meds}, Requires grooming: {self.grooming},
+                Belongings: {self.belongings}, Friendly: {self.friendly}"""
 
-    def __repr__(self): 
+    def __repr__(self):
         return self.__str__()
-

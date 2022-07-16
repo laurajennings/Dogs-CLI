@@ -1,3 +1,8 @@
+STYLE
+PEP 8 
+Linting: Pylint
+
+HELP
 Add Dog:
 Fill out dog's information, if non-applicable write None.
 Delete Dog:
