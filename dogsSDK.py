@@ -11,6 +11,7 @@ c.execute('CREATE TABLE IF NOT EXISTS small (name TEXT, owner TEXT, breed TEXT, 
 c.execute('CREATE TABLE IF NOT EXISTS groom (name TEXT, owner TEXT, breed TEXT, size TEXT, age TEXT, gender TEXT, feed_meds TEXT, grooming TEXT, belongings TEXT, friendly TEXT)')
 c.execute('CREATE TABLE IF NOT EXISTS feed_meds (name TEXT, owner TEXT, breed TEXT, size TEXT, age TEXT, gender TEXT, feed_meds TEXT, grooming TEXT, belongings TEXT, friendly TEXT)')
 c.execute('CREATE TABLE IF NOT EXISTS belongings (name TEXT, owner TEXT, breed TEXT, size TEXT, age TEXT, gender TEXT, feed_meds TEXT, grooming TEXT, belongings TEXT, friendly TEXT)')
+
 c.connection.close()
 
 def add_dog(dog):
@@ -19,16 +20,14 @@ def add_dog(dog):
         c.execute("INSERT INTO dogs VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         c.execute("INSERT INTO belongings VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         c.execute("INSERT INTO feed_meds VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
+        c.execute("INSERT INTO feed_meds VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         if dog.size == "Large":
             c.execute("INSERT INTO large VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         if dog.size == "Small":
             c.execute("INSERT INTO small VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
         if dog.grooming == "Yes":
             c.execute("INSERT INTO groom VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
-        def feed_meds():
-            if not dog.feed_meds == "None":
-                c.execute("INSERT INTO feed_meds VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
-
+                
     c.connection.close()
 
 def get_dogs():

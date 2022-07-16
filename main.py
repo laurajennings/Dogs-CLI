@@ -1,11 +1,15 @@
+'''Modules for terminal menu and screen clear.'''
 import os
-os.system("clear")
-from simple_term_menu import TerminalMenu 
+from simple_term_menu import TerminalMenu
 from dog import Dog
 import dogsSDK
 
 
-def main_menu():
+
+os.system("clear")
+
+def menu():
+    '''Loops through menu until quit.'''
     options = ["Add Dog", "Delete Dog", "Get Info", "Feeding/Meds", "Grooming/Belongings", "Quit"]
     main_menu = TerminalMenu(options)
     info_options = ["All", "Large", "Small", "Search Name"]
@@ -13,14 +17,14 @@ def main_menu():
 
     quit = False
 
-    while quit == False:
-        optionsList = main_menu.show()
-        optionsChoice = options[optionsList]
+    while quit is False:
+        options_list = main_menu.show()
+        options_choice = options[options_list]
 
-        if(optionsChoice == "Quit"):
+        if options_choice == "Quit":
             quit = True
 
-        if(optionsChoice == "Add Dog"):
+        if options_choice == "Add Dog":
             name = input("Dog's name: ")
             owner = input("Owner's name: ")
             breed = input("Breed: ")
@@ -31,34 +35,35 @@ def main_menu():
             grooming = input("Do they need grooming?: ")
             belongings = input("Do they have any belongings?: ")
             friendly = input("Are they friendly?: ")
-            dog = Dog(name, owner, breed, size, age, gender, feed_meds, grooming, belongings, friendly)
+            dog = Dog(name, owner, breed, size, age, gender,
+                    feed_meds, grooming, belongings, friendly)
             dogsSDK.add_dog(dog)
 
-        if(optionsChoice == "Delete Dog"):
+        if options_choice == "Delete Dog":
             name = input("Name: ")
             dogsSDK.delete_dog(name)
 
-        if(optionsChoice == "Get Info"):
-            optionsList = info_menu.show()
-            optionsChoice = info_options[optionsList]
-            if(optionsChoice == "All"):
+        if options_choice == "Get Info":
+            options_list = info_menu.show()
+            options_choice = info_options[options_list]
+            if options_choice == "All":
                 print(dogsSDK.get_dogs())
-            if(optionsChoice == "Large"):
+            if options_choice == "Large":
                 print(dogsSDK.get_large_dogs())
-            if(optionsChoice == "Small"):
+            if options_choice == "Small":
                 print(dogsSDK.get_small_dogs())
-            if(optionsChoice == "Search Name"):
+            if options_choice == "Search Name":
                 name = input("Name: ")
                 print(dogsSDK.get_info(name))
 
-        if(optionsChoice == "Feeding/Meds"):
+        if options_choice == "Feeding/Meds":
             print(dogsSDK.feed_meds())
 
-        if(optionsChoice == "Grooming/Belongings"):
+        if options_choice == "Grooming/Belongings":
             print(dogsSDK.out_groom())
             print(dogsSDK.out_belongings())
 
         else:
-            print(optionsChoice)
+            print(options_choice)
 
-main_menu()
+menu()
