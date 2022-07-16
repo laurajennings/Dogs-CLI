@@ -6,7 +6,7 @@ import dogsSDK
 
 
 def main_menu():
-    options = ["Add Dog", "Delete Dog", "Get Info", "Incoming", "Feeding/Meds", "Outgoing", "Quit"]
+    options = ["Add Dog", "Delete Dog", "Get Info", "Feeding/Meds", "Grooming/Belongings", "Quit"]
     main_menu = TerminalMenu(options)
     info_options = ["All", "Large", "Small", "Search Name"]
     info_menu = TerminalMenu(info_options)
@@ -51,13 +51,10 @@ def main_menu():
                 name = input("Name: ")
                 print(dogsSDK.get_info(name))
 
-        if(optionsChoice == "Incoming"):
-            pass
-
         if(optionsChoice == "Feeding/Meds"):
             print(dogsSDK.feed_meds())
 
-        if(optionsChoice == "Outgoing"):
+        if(optionsChoice == "Grooming/Belongings"):
             print(dogsSDK.out_groom())
             print(dogsSDK.out_belongings())
 
