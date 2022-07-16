@@ -29,10 +29,8 @@ def add_dog(dog):
             if not dog.feed_meds == "None":
                 c.execute("INSERT INTO feed_meds VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (dog.name, dog.owner, dog.breed, dog.size, dog.age, dog.gender, dog.feed_meds, dog.grooming, dog.belongings, dog.friendly))
 
-
     c.connection.close()
 
-    
 def get_dogs():
     c = cursor()
     dogs = []
