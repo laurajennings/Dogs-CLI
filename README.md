@@ -18,6 +18,33 @@ Displays list of dogs that need to be groomed and dogs with their belongings.
 6. Quit:
 Exits out of program.
 
+# IMPLEMENTATION PLAN
+The purpose of this app is to take user input and instantiate a class object to store in a database. 
+The python module sqlite3 is used to create tables to store data from user.
+Add dog:  
+    - Prompt input from user to instantiate an object to be stored in certain tables.  
+    - Add objects to additional tables (Large, Small, Feed/meds, Grooming, Belongings) depending on input.  
+Delete dog:  
+    - Promput input of dog's name to delete  
+    - Delete dog from all tables it was added to  
+Get info:  
+    - Sub menu with All, Large, Small or Search name  
+    - Display list of All, Large or Small dogs when selected  
+    - If search name is selected, get specific dog from table and display all information.  
+Feeding/Meds:  
+    - Adds all dogs information to this table  
+    - Only displays name and feeding/medication info when selected  
+Grooming/Belongings:  
+    - Add dogs to grooming table it their input in add dog said yes to grooming  
+    - Show only dogs who need grooming when selected  
+    - Adds all dogs to belongings table  
+    - Displays only names and belongings when selected  
+
+## Trello Board
+![Trello Board](./Trello.png)
+## Flow Chart
+![Flow Chart](TermAppFC.png)
+
 # SYSTEM REQUIREMENTS
 Python 3
 pip modules - simple term menu and sqlite3
@@ -26,31 +53,7 @@ pip modules - simple term menu and sqlite3
 
  
 
-IMPLEMENTATION PLAN
-The purpose of this app is to take user input and instantiate a class object to store in a database. 
-The python module sqlite3 is used to create tables to store data from user.
-Add dog:
-    - Prompt input from user to instantiate an object to be stored in certain tables.
-    - Add objects to additional tables (Large, Small, Feed/meds, Grooming, Belongings) depending on input.
-Delete dog:
-    - Promput input of dog's name to delete
-    - Delete dog from all tables it was added to
-Get info:
-    - Sub menu with All, Large, Small or Search name
-    - Display list of All, Large or Small dogs when selected
-    - If search name is selected, get specific dog from table and display all information.
-Feeding/Meds:
-    - Adds all dogs information to this table
-    - Only displays name and feeding/medication info when selected
-Grooming/Belongings:
-    - Add dogs to grooming table it their input in add dog said yes to grooming
-    - Show only dogs who need grooming when selected
-    - Adds all dogs to belongings table
-    - Displays only names and belongings when selected
 
-![Trello Board](./Trello.png)
-
-![Flow Chart](TermAppFC.png)
 
 INSTALLATION 
 This app uses Python 3, pip modules simple_term_menu and sqlite3.
