@@ -22,6 +22,9 @@ Displays list of dogs that need to be groomed and dogs with their belongings.
 6. Quit:
 Exits out of program. 
 
+IMPLEMENTATION PLAN
+
+
 HELP
 Add Dog:
 Fill out dog's information, if non-applicable write None.

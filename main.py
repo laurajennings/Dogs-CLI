@@ -6,7 +6,7 @@ import dogs_sql
 
 
 
-os.system("clear")
+
 
 def menu():
     '''Loops through menu until quit.'''
@@ -76,5 +76,7 @@ def menu():
 
         else:
             print(options_choice)
+
+    os.system("clear")
 
 menu()
