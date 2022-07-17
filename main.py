@@ -28,8 +28,19 @@ def menu():
             name = input("Dog's name: ")
             owner = input("Owner's name: ")
             breed = input("Breed: ")
-            size = input("Large or Small: ")
-            age = input("Age: ")
+            while True:
+                size = input("Large or Small: ")
+                if size not in ("Large", "Small"):
+                    print("Please enter Large or Small")
+                else:
+                    break
+            while True:
+                try:
+                    age = int(input("Age: "))
+                except ValueError:
+                    print("Please enter a number")
+                else:
+                    break
             gender = input("Gender: ")
             feed_meds = input("Medication or special food required: ")
             grooming = input("Do they need grooming?: ")
