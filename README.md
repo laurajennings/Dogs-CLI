@@ -44,6 +44,10 @@ Grooming/Belongings:
     - Adds all dogs to belongings table
     - Displays only names and belongings when selected
 
+![Trello Board](./Trello.png)
+
+![Flow Chart](TermAppFC.png)
+
 INSTALLATION 
 This app uses Python 3, pip modules simple_term_menu and sqlite3.
 To run, clone from github repo and type in the command line ./run_dogs.sh
