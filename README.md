@@ -1,14 +1,10 @@
-https://github.com/laurajennings/LauraJennings_T1A3
 
-SYSTEM REQUIREMENTS
-Python 3
-pip modules - simple term menu and sqlite3
+Link to [Github Repo](https://github.com/laurajennings/LauraJennings_T1A3)  
+# STYLE
+PEP 8   
+Linting module: Pylint
 
-STYLE
-PEP 8 
-Linting: Pylint
-
-FEATURES
+# FEATURES
 1. Add Dog:
 Prompts user to enter information about new dog and enters it into the database.
 2. Delete Dog:
@@ -20,7 +16,15 @@ Displays list of dogs and their special feeling/medication requierments.
 5. Grooming/Belongings:
 Displays list of dogs that need to be groomed and dogs with their belongings. 
 6. Quit:
-Exits out of program. 
+Exits out of program.
+
+# SYSTEM REQUIREMENTS
+Python 3
+pip modules - simple term menu and sqlite3
+
+
+
+ 
 
 IMPLEMENTATION PLAN
 The purpose of this app is to take user input and instantiate a class object to store in a database. 
@@ -50,7 +54,7 @@ Grooming/Belongings:
 
 INSTALLATION 
 This app uses Python 3, pip modules simple_term_menu and sqlite3.
-To run, clone from github repo and type in the command line ./run_dogs.sh
+To run, clone from [Github Repo](https://github.com/laurajennings/LauraJennings_T1A3) and type in the command line ./run_dogs.sh
 
 
 HELP

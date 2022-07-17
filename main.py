@@ -5,9 +5,6 @@ from dog import Dog
 import dogs_sql
 
 
-
-
-
 def menu():
     '''Loops through menu until quit.'''
     options = ["Add Dog", "Delete Dog", "Get Info", "Feeding/Meds", "Grooming/Belongings", "Quit"]
